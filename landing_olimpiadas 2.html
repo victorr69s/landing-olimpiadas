@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olimpiadas del Colegio ANAVI — Landing</title>
+
+  <style>
+    /* 
+      ============================================================
+      GUÍA DE ESTILOS — SOLO INSTRUCCIONES 
+      - Debajo de cada bloque de comentarios, el estudiante escribirá
+        las reglas CSS indicadas exactamente como se piden.
+      - No borres estos comentarios.
+      ============================================================
+    */
+
+    /* 
+      Paso 1: Estilos globales y reset
+      - Aplicar box-sizing: border-box a todos los elementos con *.
+    */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* 
+      Paso 2: Estilos para el body
+      - margin: 0.
+      - font-family: Arial, Helvetica, sans-serif.
+      - color: #1f2937 (gris oscuro).
+      - background: #f7f7f8 (gris muy claro).
+    */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #f7f7f8;
+    }
+
+    /* 
+      Paso 3: Estilos para enlaces (a)
+      - Hacer que los enlaces hereden el color del padre con color: inherit.
+    */
+    a {
+      color: inherit;
+    }
+
+    /* 
+      Paso 4: Contenedor principal (.contenedor)
+      - max-width: 1100px.
+      - margin: 0 auto (centrar horizontalmente).
+      - padding: 0 18px (espaciado lateral).
+    */
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* 
+      Paso 5: Encabezado (.encabezado)
+      - background: #ffffff (blanco).
+      - border-bottom: 1px solid #e6e8eb (borde inferior gris claro).
+    */
+    .encabezado {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e8eb;
+    }
+
+    /* 
+      Paso 6: Barra de navegación (.barra)
+      - display: flex.
+      - align-items: center.
+      - justify-content: space-between.
+      - gap: 16px.
+      - padding: 12px 18px.
+    */
+    .barra {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 18px;
+    }
+
+    /* 
+      Paso 7: Marca del sitio (.marca)
+      - display: flex.
+      - align-items: center.
+      - gap: 10px.
+      - text-decoration: none.
+      - font-weight: 800.
+    */
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    /* 
+      Paso 8: Emblema de la marca (.marca-emblema)
+      - display: inline-flex.
+      - align-items: center.
+      - justify-content: center.
+      - width: 38px.
+      - height: 38px.
+      - border-radius: 10px.
+      - background: #ffd43b (amarillo).
+      - border: 2px solid #ffffff (borde blanco).
+    */
+    .marca-emblema {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #ffd43b;
+      border: 2px solid #ffffff;
+
+    }
+
+    /* 
+      Paso 9: Lista de navegación (.navegacion ul)
+      - list-style: none.
+      - margin: 0.
+      - padding: 0.
+      - display: flex.
+      - gap: 8px.
+      - flex-wrap: wrap.
+    */
+    .navegacion ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+
+    }
+
+    /* 
+      Paso 10: Enlaces del menú (.navegacion a)
+      - text-decoration: none.
+      - font-weight: 600.
+      - padding: 8px 12px.
+      - border-radius: 10px.
+    */
+    .navegacion a {
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 10px;
+
+    }
+
+    /* 
+      Paso 11: Hover del menú (.navegacion a:hover)
+      - Cambiar background a #e6f6f1 (verde muy claro).
+    */
+    .navegacion a:hover {
+      background: #e6f6f1;
+    }
+
+    /* 
+      Paso 12: Sección héroe (.heroe)
+      - padding: 28px 18px 10px.
+      - display: flex.
+      - align-items: center.
+      - justify-content: space-between.
+      - flex-wrap: wrap.
+      - gap: 20px.
+    */
+    .heroe {
+      padding: 28px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* 
+      Paso 13: Sello o badge (.sello)
+      - display: inline-flex.
+      - align-items: center.
+      - gap: 8px.
+      - padding: 6px 10px.
+      - border-radius: 999px (completamente redondeado).
+      - background: #e6f6f1.
+      - color: #087f5b.
+      - border: 1px solid #d2e7e1.
+      - font-weight: 800.
+      - font-size: .9rem.
+    */
+    .sello {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e6f6f1;
+      color: #087f5b;
+      border: 1px solid #d2e7e1;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    /* 
+      Paso 14: Título del héroe (.heroe h1)
+      - margin: 10px 0 6px 0.
+      - line-height: 1.1.
+      - font-size: 2rem.
+    */
+    .heroe h1 {
+      margin: 10px 0 6px 0;
+      line-height: 1.1;
+      font-size: 2rem;
+    }
+
+    /* 
+      Paso 15: Texto guía (.texto-guia)
+      - color: #6b7280 (gris medio).
+      - margin: 0 0 12px 0.
+    */
+    .texto-guia {
+      color: #6b7280;
+      margin: 0 0 12px 0;
+    }
+
+    /* 
+      Paso 16: Botonera de acciones (.acciones)
+      - display: flex.
+      - gap: 12px.
+      - flex-wrap: wrap.
+    */
+    .acciones {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* 
+      Paso 17: Estilos base de botones (.boton)
+      - border: 0.
+      - padding: 12px 16px.
+      - border-radius: 12px.
+      - cursor: pointer.
+      - font-weight: 800.
+      - text-decoration: none.
+      - display: inline-flex.
+      - align-items: center.
+      - gap: 10px.
+    */
+    .boton {
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* 
+      Paso 18: Botón primario (.boton-primario)
+      - background: #087f5b (verde).
+      - color: #ffffff (blanco).
+    */
+    .boton-primario {
+      background: #087f5b;
+      color: #ffffff;
+    }
+
+    /* 
+      Paso 19: Botón secundario (.boton-secundario)
+      - background: #ffffff (blanco).
+      - color: #1f2937 (gris oscuro).
+      - border: 1px solid #d2e7e1 (borde verde muy claro).
+    */
+    .boton-secundario {
+      background: #ffffff;
+      color: #1f2937;
+      border: 1px solid #d2e7e1;
+    }
+
+    /* 
+      Paso 20: Tarjeta de ilustración (.ilustracion)
+      - background: #ffffff.
+      - border: 1px solid #e6e8eb.
+      - border-radius: 14px.
+      - padding: 18px.
+      - display: flex.
+      - align-items: center.
+      - justify-content: center.
+      - gap: 18px.
+      - min-width: 260px.
+      - min-height: 120px.
+    */
+    .ilustracion {
+      background: #ffffff;
+      border: 1px solid #e6e8eb;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      min-width: 260px;
+      min-height: 120px;
+    }
+
+    /* 
+      Paso 21: Emojis grandes (.emoji-grande)
+      - font-size: 50px.
+    */
+    .emoji-grande {
+      font-size: 50px;
+    }
+
+    /* 
+      Paso 22: Emojis medianos (.emoji-mediano)
+      - font-size: 40px.
+    */
+    .emoji-mediano {
+      font-size: 40px;
+    }
+
+    /* 
+      Paso 23: Secciones genéricas (.seccion)
+      - padding: 26px 18px.
+    */
+    .seccion {
+      padding: 26px 18px;
+    }
+
+    /* 
+      Paso 24: Títulos de sección (.seccion h2)
+      - margin: 0 0 10px 0.
+      - font-size: 1.4rem.
+    */
+    .seccion h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.4rem;
+    }
+
+    /* 
+      Paso 25: Texto de apoyo (.pista)
+      - color: #6b7280.
+      - margin: 0 0 8px 0.
+    */
+    .pista {
+      color: #6b7280;
+      margin: 0 0 8px 0;
+    }
+
+    /* 
+      Paso 26: Contenedor de tarjetas (.tarjetas)
+      - display: flex.
+      - flex-wrap: wrap.
+      - gap: 16px.
+    */
+    .tarjetas {
+      display: flex. - flex-wrap: wrap. - gap: 16px
+    }
+
+    /* 
+      Paso 27: Tarjeta (.tarjeta)
+      - background: #ffffff.
+      - border: 1px solid #e6e8eb.
+      - border-radius: 14px.
+      - padding: 16px.
+      - flex: auto.
+      - min-width: 260px.
+    */
+    .tarjeta {
+      background: #ffffff;
+      border: 1px solid #e6e8eb;
+      border-radius: 14px;
+      padding: 16px;
+      flex: auto;
+      min-width: 260px;
+    }
+
+    /* 
+      Paso 28: Títulos de tarjeta (.tarjeta h3)
+      - margin: 4px 0 6px 0.
+    */
+    .tarjeta h3 {
+      margin: 4px 0 6px 0;
+    }
+
+    /* 
+      Paso 29: Listas personalizadas (.lista)
+      - padding: 0.
+      - margin: 10px 0 0 0.
+      - list-style: none.
+      - display: flex.
+      - flex-direction: column.
+      - gap: 10px.
+    */
+    .lista {
+      padding: 0;
+      margin: 10px 0 0 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* 
+      Paso 30: Ítems de lista (.item)
+      - background: #ffffff.
+      - border: 1px solid #e6e8eb.
+      - border-radius: 12px.
+      - padding: 10px 12px.
+      - display: flex.
+      - align-items: center.
+      - justify-content: space-between.
+      - gap: 10px.
+    */
+    .item {
+      background: #ffffff;
+      border: 1px solid #e6e8eb;
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* 
+      Paso 31: Etiquetas (.etiqueta)
+      - font-size: .9rem.
+      - font-weight: 700.
+      - padding: 4px 10px.
+      - border-radius: 999px.
+      - border: 1px solid #d2e7e1.
+      - background: #e6f6f1.
+      - color: #087f5b.
+      - white-space: nowrap.
+    */
+    .etiqueta {
+      font-size: .9rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #d2e7e1;
+      background: #e6f6f1;
+      color: #087f5b;
+      white-space: nowrap;
+    }
+
+    /* 
+      Paso 32: Notas (.nota)
+      - color: #6b7280.
+      - font-weight: 600.
+    */
+    .nota {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    /* 
+      Paso 33: Pie de página (.pie)
+      - margin-top: 40px.
+      - background: #ffffff.
+      - border-top: 1px solid #e6e8eb.
+      - color: #6b7280.
+    */
+    .pie {
+      margin-top: 40px;
+      background: #ffffff;
+      border-top: 1px solid #e6e8eb;
+      color: #6b7280;
+    }
+
+    /* 
+      Paso 34: Contenido del pie (.pie-contenido)
+      - padding: 20px 18px.
+      - display: flex.
+      - align-items: center.
+      - justify-content: space-between.
+      - gap: 8px.
+      - flex-wrap: wrap.
+    */
+    .pie-contenido {
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    ============================================================
+    GUÍA DE MARCADO — SOLO INSTRUCCIONES 
+    - Sigue los pasos. Crea los elementos en el orden indicado.
+    - Respeta anidación, clases, ids, atributos y textos exactos.
+    ============================================================
+  -->
+
+  <!-- Paso 35: Crear el encabezado del sitio -->
+  <!-- 35.1: Crear <header> con clase "encabezado". -->
+  <!-- 35.2: Dentro del header, crear un <div> con clases "barra contenedor". -->
+  <!-- 35.3: Dentro del div .barra, crear un enlace <a> con clase "marca" y href="#inicio". -->
+  <!-- 35.4: Dentro del enlace .marca, crear:
+            - 35.4.1: <span> con clase "marca-emblema" y el emoji 🏅 como contenido.
+            - 35.4.2: <span> con el texto exacto: "Olimpiadas ANAVI". -->
+  <!-- 35.5: A la derecha, crear un <nav> con clase "navegacion". -->
+  <!-- 35.6: Dentro del nav, crear un <ul>. -->
+  <!-- 35.7: Dentro del ul, crear 3 <li>, cada uno con un enlace <a>:
+            - 35.7.1: <a href="#sobre">Sobre</a>
+            - 35.7.2: <a href="#categorias">Categorías</a>
+            - 35.7.3: <a href="#tematica">Temática</a> -->
+
+  <!-- Paso 36: Crear el contenedor principal de la página -->
+  <!-- 36.1: Crear <main> con id="inicio" y clase "contenedor". -->
+
+  <!-- Paso 37: Dentro de <main>, crear la sección héroe -->
+  <!-- 37.1: Crear <section> con clase "heroe". -->
+  <!-- 37.2: Dentro de .heroe, crear dos elementos hermanos:
+            (A) Un <div> de contenido textual.
+            (B) Un <div> ilustración con emojis. -->
+
+  <!-- Paso 38: Completar el bloque de texto del héroe (hermano A) -->
+  <!-- 38.1: Dentro del <div> (A), crear un <span> con clase "sello" y texto: "Edición 2025". -->
+  <!-- 38.2: Debajo, crear un <h1> con el texto exacto:
+            "¡Bienvenidos a las Olimpiadas del Colegio ANAVI! 👏" -->
+  <!-- 38.3: Debajo, crear un <p> con clase "texto-guia" y texto:
+            "Celebramos la creatividad, la identidad institucional y la sana convivencia entre cursos." -->
+  <!-- 38.4: Debajo, crear un <div> con clase "acciones". -->
+  <!-- 38.5: Dentro de .acciones, crear 2 enlaces <a> con clases y destinos:
+            - 38.5.1: <a class="boton boton-primario" href="#categorias">Ver categorías</a>
+            - 38.5.2: <a class="boton boton-secundario" href="#tematica">Ver temática</a> -->
+
+  <!-- Paso 39: Completar el bloque de ilustración del héroe (hermano B) -->
+  <!-- 39.1: Crear un <div> con clase "ilustracion". -->
+  <!-- 39.2: Dentro de .ilustracion, crear 4 <span> en este orden:
+            - 39.2.1: <span class="emoji-grande">🔥</span>
+            - 39.2.2: <span class="emoji-grande">⚽</span>
+            - 39.2.3: <span class="emoji-mediano">🎉</span>
+            - 39.2.4: <span class="emoji-mediano">🥇</span> -->
+
+  <!-- Paso 40: Crear la sección "Sobre las Olimpiadas" -->
+  <!-- 40.1: Crear <section> con id="sobre" y clase "seccion". -->
+  <!-- 40.2: Dentro, crear <h2> con texto: "Sobre las Olimpiadas". -->
+  <!-- 40.3: Crear dos párrafos <p> con clase "pista" y textos EXACTOS:
+            - 40.3.1: "Participan todos los cursos bajo las mismas condiciones, fomentando respeto, orden y puntualidad."
+            - 40.3.2: "Objetivo: fortalecer identidad ANAVI, trabajo en equipo y convivencia entre estudiantes y docentes." -->
+
+  <!-- Paso 41: Crear la sección "Categorías de calificación" -->
+  <!-- 41.1: Crear <section> con id="categorias" y clase "seccion". -->
+  <!-- 41.2: Dentro, crear <h2> con texto: "Categorías de calificación". -->
+  <!-- 41.3: Crear un <div> con clase "tarjetas". -->
+  <!-- 41.4: Dentro de .tarjetas, crear 3 <article> con clase "tarjeta": -->
+
+  <!-- Paso 42: Tarjeta 1 — "Mejor uniformado" -->
+  <!-- 42.1: Dentro de .tarjetas, primer <article class="tarjeta">. -->
+  <!-- 42.2: Agregar <h3> con texto: "1) Mejor uniformado 👕". -->
+  <!-- 42.3: Agregar <p class="pista"> con texto:
+            "Camiseta representativa y calentador. Se valora unidad y presentación." -->
+
+  <!-- Paso 43: Tarjeta 2 — "Mascota o estudiante representativo" -->
+  <!-- 43.1: Segundo <article class="tarjeta">. -->
+  <!-- 43.2: Agregar <h3> con texto:
+            "2) Mascota o estudiante representativo 🐾". -->
+  <!-- 43.3: Agregar <p class="pista"> con texto:
+            "Un alumno como símbolo del país o club. Creatividad y elaboración propia." -->
+
+  <!-- Paso 44: Tarjeta 3 — "Show cultural–deportivo" -->
+  <!-- 44.1: Tercer <article class="tarjeta">. -->
+  <!-- 44.2: Agregar <h3> con texto: "3) Show cultural–deportivo 🎭". -->
+  <!-- 44.3: Agregar una lista <ul class="lista">. -->
+  <!-- 44.4: Dentro de la lista, crear dos <li class="item"> con esta estructura:
+            - 44.4.1: Primer li: <span>Reseña histórica</span> y <span class="etiqueta">1 min</span>.
+            - 44.4.2: Segundo li: <span>Coreografía</span> y <span class="etiqueta">2 min</span>. -->
+
+  <!-- Paso 45: Crear la sección "Temática: países y clubes asignados" -->
+  <!-- 45.1: Crear <section> con id="tematica" y clase "seccion". -->
+  <!-- 45.2: Dentro, crear <h2> con texto:
+            "Temática: países y clubes asignados 🌍🏆". -->
+
+  <!-- Paso 46: Tarjeta de "Selecciones nacionales (Primaria)" -->
+  <!-- 46.1: Crear <article class="tarjeta"> con el atributo inline style="margin-bottom:14px;". -->
+  <!-- 46.2: Dentro, agregar <h3> con texto:
+            "Selecciones nacionales (Primaria)". -->
+  <!-- 46.3: Agregar una lista <ul class="lista"> con SIETE <li class="item"> EXACTOS y en este orden:
+            - 46.3.1: <span>Ecuador</span> + <span class="etiqueta">Preescolar</span>
+            - 46.3.2: <span>Argentina</span> + <span class="etiqueta">2.º EGB</span>
+            - 46.3.3: <span>Chile</span> + <span class="etiqueta">3.º EGB</span>
+            - 46.3.4: <span>Colombia</span> + <span class="etiqueta">4.º EGB</span>
+            - 46.3.5: <span>Brasil</span> + <span class="etiqueta">5.º EGB</span>
+            - 46.3.6: <span>Uruguay</span> + <span class="etiqueta">6.º EGB</span>
+            - 46.3.7: <span>Perú</span> + <span class="etiqueta">7.º EGB</span> -->
+
+  <!-- Paso 47: Tarjeta de "Clubes europeos (Secundaria y Bachillerato)" -->
+  <!-- 47.1: Crear <article class="tarjeta"> (sin estilo inline). -->
+  <!-- 47.2: Dentro, agregar <h3> con texto:
+            "Clubes europeos (Secundaria y Bachillerato)". -->
+  <!-- 47.3: Agregar una lista <ul class="lista"> con NUEVE <li class="item"> EXACTOS y en este orden:
+            - 47.3.1: <span>Paris Saint-Germain</span> + <span class="etiqueta">8.º EGB</span>
+            - 47.3.2: <span>AC Milán</span> + <span class="etiqueta">9.º EGB</span>
+            - 47.3.3: <span>Juventus</span> + <span class="etiqueta">10.º EGB</span>
+            - 47.3.4: <span>Bayern Múnich</span> + <span class="etiqueta">1.º Bach.</span>
+            - 47.3.5: <span>Real Madrid</span> + <span class="etiqueta">2.º Técnico</span>
+            - 47.3.6: <span>FC Barcelona</span> + <span class="etiqueta">2.º Ciencias</span>
+            - 47.3.7: <span>Manchester United</span> + <span class="etiqueta">3.º Técnico</span>
+            - 47.3.8: <span>Liverpool</span> + <span class="etiqueta">—</span>
+            - 47.3.9: <span>Chelsea</span> + <span class="etiqueta">3.º Ciencias</span> -->
+
+  <!-- Paso 48: Crear el pie de página -->
+  <!-- 48.1: Crear <footer> con clase "pie". -->
+  <!-- 48.2: Dentro del footer, crear un <div> con clases "pie-contenido contenedor". -->
+  <!-- 48.3: Dentro del div, agregar DOS <span> con textos EXACTOS:
+            - 48.3.1: "© 2025 Colegio ANAVI — Olimpiadas"
+            - 48.3.2: "Información institucional." -->
+  <header class="encabezado">
+    <div class="barra contenedor"> <a href="#inicio" class="marca"> <span class="marca-emblema">🏅</span>
+        <span>Olimpiadas ANAVI</span> </a>
+      <nav class="navegacion">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#categorias">Categoria</a></li>
+          <li><a href="#tematica">Temática</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inicio" class="contenedor">
+    <section class="heroe">
+      <div> <span class="sello">Edición 2025</span>
+        <h1>¡Bienvenidos a las Olimpiadas del Colegio ANAVI! 👏</h1>
+        <p class="texto-guia">Celebramos la creatividad, la identidad institucional y la sana convivencia entre cursos.
+        </p>
+        <div class="acciones"> <a class="boton boton-primario" href="#categorias">Ver categorías</a> <a
+            class="boton boton-secundario" href="#tematica">Ver temática</a> </div>
+      </div>
+      <div class="ilustracion"> <span class="emoji-grande">🔥</span> <span class="emoji-grande">⚽</span> <span
+          class="emoji-mediano">🎉</span> <span class="emoji-mediano">🥇</span> </div>
+    </section>
+    <section id="sobre" class="seccion">
+      <h2>Sobre las Olimpiadas</h2>
+      <p class="pista">Participan todos los cursos bajo las mismas condiciones, fomentando respeto, orden y puntualidad.
+      </p>
+      <p class="pista">Objetivo: fortalecer identidad ANAVI, trabajo en equipo y convivencia entre estudiantes y
+        docentes.</p>
+    </section>
+    <section id="categorias" class="seccion">
+      <h2>Categorías de calificación</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>1) Mejor uniformado 👕</h3>
+          <p class="pista">Camiseta representativa y calentador. Se valora unidad y presentación.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>2) Mascota o estudiante representativo 🐾</h3>
+          <p class="pista">Un alumno como símbolo del país o club. Creatividad y elaboración propia.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>3) Show cultural–deportivo 🎭</h3>
+          <ul class="lista">
+            <li class="item"><span>Reseña histórica</span><span class="etiqueta">1 min</span></li>
+            <li class="item"><span>Coreografía</span><span class="etiqueta">2 min</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="tematica" class="seccion">
+      <h2>Temática: países y clubes asignados 🌍🏆</h2>
+      <article class="tarjeta" style="margin-bottom:14px;">
+        <h3>Selecciones nacionales (Primaria)</h3>
+        <ul class="lista">
+          <li class="item"><span>Ecuador</span><span class="etiqueta">Preescolar</span></li>
+          <li class="item"><span>Argentina</span><span class="etiqueta">2.º EGB</span></li>
+          <li class="item"><span>Chile</span><span class="etiqueta">3.º EGB</span></li>
+          <li class="item"><span>Colombia</span><span class="etiqueta">4.º EGB</span></li>
+          <li class="item"><span>Brasil</span><span class="etiqueta">5.º EGB</span></li>
+          <li class="item"><span>Uruguay</span><span class="etiqueta">6.º EGB</span></li>
+          <li class="item"><span>Perú</span><span class="etiqueta">7.º EGB</span></li>
+        </ul>
+      </article>
+      <article class="tarjeta">
+        <h3>Clubes europeos (Secundaria y Bachillerato)</h3>
+        <ul class="lista">
+          <li class="item"><span>Paris Saint-Germain</span><span class="etiqueta">8.º EGB</span></li>
+          <li class="item"><span>AC Milán</span><span class="etiqueta">9.º EGB</span></li>
+          <li class="item"><span>Juventus</span><span class="etiqueta">10.º EGB</span></li>
+          <li class="item"><span>Bayern Múnich</span><span class="etiqueta">1.º Bach.</span></li>
+          <li class="item"><span>Real Madrid</span><span class="etiqueta">2.º Técnico</span></li>
+          <li class="item"><span>FC Barcelona</span><span class="etiqueta">2.º Ciencias</span></li>
+          <li class="item"><span>Manchester United</span><span class="etiqueta">3.º Técnico</span></li>
+          <li class="item"><span>Liverpool</span><span class=" etiqueta-vacia"> NO HAY CURSO</span></li>
+          <li class="item"><span>Chelsea</span><span class="etiqueta">3.º Ciencias</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <footer class="pie">
+    <div class="pie-contenido contenedor"> <span>© 2025 Colegio ANAVI — Olimpiadas</span> <span>Información
+        institucional.</span> </div>
+  </footer>
+
+</body>
+
+</html>
